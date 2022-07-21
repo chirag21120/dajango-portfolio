@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% block title %} Form {% endblock title%}
+{% block formactive %} active {% endblock formactive%}
+{% block body %}
+<div class="container" >
+    <form action = "\form" method = "post" enctype = "multipart/form-data">
+        
+       {% csrf_token %}
+
+         <div class="mb-3">
+           <label for="exampleInputEmail1" class="form-label">Email address</label>
+           <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp">
+           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+        
+         <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile" name = "formFile">
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+            <label class="form-check-label" for="validationFormCheck1">Accept our tems and conditions</label>
+            <div class="invalid-feedback">Please check this checkbox</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+   {% endblock body %}
